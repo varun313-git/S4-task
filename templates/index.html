@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled CRUD Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-card">
+            <div class="hero-copy">
+                <h1>People Manager</h1>
+                <p>Enter name, age, and occupation, then save. Use the controls to edit or delete records instantly.</p>
+            </div>
+            <div class="hero-badge">CRUD + Python + ML</div>
+        </header>
+
+        <main class="content-grid">
+            <section class="panel form-panel">
+                <h2>Add a new person</h2>
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Jane Doe" />
+                </div>
+                <div class="form-field">
+                    <label for="age">Age</label>
+                    <input id="age" type="number" min="1" placeholder="28" />
+                </div>
+                <div class="form-field">
+                    <label for="occupation">Occupation</label>
+                    <input id="occupation" type="text" placeholder="Software Engineer" />
+                </div>
+                <div class="button-row">
+                    <button id="saveButton" class="primary-button">Save</button>
+                    <button id="cancelEditButton" class="secondary-button hidden">Cancel</button>
+                </div>
+                <div id="messageBox" class="message-box"></div>
+            </section>
+
+            <section class="panel data-panel">
+                <div class="panel-header">
+                    <h2>Saved records</h2>
+                    <span class="badge" id="recordCount">0 records</span>
+                </div>
+                <div class="type-box" id="typeBox">
+                    <p class="type-box-text">Saved people appear here after pressing Save.</p>
+                    <div class="table-wrap">
+                        <table id="entriesTable" class="entries-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Occupation</th>
+                                    <th>Prediction</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
